@@ -1,0 +1,8 @@
+{
+  "name": "openai-sdk-demo",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "openai": "^5.0.0"
+  }
+}

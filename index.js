@@ -13,10 +13,11 @@ async function getOpenAIResponse(question) {
       output_text: `This is a mock response to: "${question}"\n\n(If this were live, you'd see a real answer from OpenAI here!)`
     };
   } else {
-    // Real OpenAI SDK usage
+    // OpenAI SDK usage
     const client = new OpenAI({
       apiKey: process.env.OPENAI_API_KEY,
     });
+    // Without the SDK this would be much more complicated and require API fetches
     return await client.responses.create({
       model: "gpt-5",
       input: question,
@@ -24,6 +25,7 @@ async function getOpenAIResponse(question) {
   }
 }
 
+// For getting user input in node terminal
 import readline from "node:readline/promises";
 import { stdin as input, stdout as output } from "node:process";
 
